@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const mutationController_1 = require("./mutationController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const router = (0, express_1.Router)();
+router.post('/', authMiddleware_1.authenticateToken, (0, authMiddleware_1.authorizeRoles)('TOKO'), mutationController_1.createRequest);
+router.get('/', authMiddleware_1.authenticateToken, (0, authMiddleware_1.authorizeRoles)('OWNER', 'DAPUR', 'TOKO'), mutationController_1.getRequests);
+router.put('/:id/complete', authMiddleware_1.authenticateToken, (0, authMiddleware_1.authorizeRoles)('DAPUR'), mutationController_1.completeRequest);
+exports.default = router;

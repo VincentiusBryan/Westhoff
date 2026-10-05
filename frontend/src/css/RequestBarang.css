@@ -1,0 +1,1455 @@
+.request-container {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  padding: 32px 40px;
+  margin: 0;
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.page-greeting {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.request-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #111827;
+}
+
+.request-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.request-form-section,
+.request-list-section {
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #111827;
+}
+
+.section-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.input-fields-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* =========================================================
+   INPUT JUMLAH
+   ========================================================= */
+
+.input-group > input {
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+.input-group > input:focus {
+  border-color: #9ca3af;
+}
+
+.input-group > input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SEARCH INPUT BARANG
+   ========================================================= */
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 46px 0 12px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+.search-input-wrapper input:focus {
+  border-color: #9ca3af;
+}
+
+/* =========================================================
+   TOMBOL DROPDOWN
+   ========================================================= */
+
+.search-dropdown-button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-left: 1px solid #e5e7eb;
+
+  background: white;
+  color: #6b7280;
+
+  border-radius: 0 7px 7px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-size: 13px;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.search-dropdown-button:hover {
+  background: #f9fafb;
+  color: #374151;
+}
+
+.search-dropdown-button:active {
+  background: #f3f4f6;
+}
+
+.search-dropdown-button.active {
+  background: #f9fafb;
+  color: #374151;
+}
+
+/* =========================================================
+   PRODUCT DROPDOWN / SUGGESTION
+   ========================================================= */
+
+.product-dropdown {
+  position: absolute;
+  z-index: 100;
+
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+
+.product-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.product-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.product-dropdown::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+.product-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* =========================================================
+   PRODUCT OPTION
+   ========================================================= */
+
+.product-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+  padding: 12px 14px;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid #f3f4f6;
+
+  transition: background 0.15s ease;
+}
+
+.product-option:last-child {
+  border-bottom: none;
+}
+
+.product-option:hover {
+  background: #f9fafb;
+}
+
+.product-option > div:first-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.product-option strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.product-option span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =========================================================
+   STOCK DI DROPDOWN
+   ========================================================= */
+
+.product-stock-info {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.product-stock-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.product-stock-info strong {
+  color: #374151;
+}
+
+/* Tidak ada produk */
+
+.no-product {
+  padding: 16px;
+
+  text-align: center;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =========================================================
+   TAMBAH BARANG
+   ========================================================= */
+
+.add-item-button {
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111827;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.add-item-button:hover {
+  background: #1f2937;
+}
+
+.add-item-button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SELECTED PRODUCT
+   ========================================================= */
+
+.selected-product {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 20px;
+  padding: 16px;
+
+  background: #f9fafb;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.selected-product-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: 8px;
+
+  flex-shrink: 0;
+}
+
+.selected-product-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  gap: 40px;
+}
+
+.selected-product-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.selected-product-info strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+.selected-product-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.selected-product-stock {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  flex-shrink: 0;
+}
+
+.stock-info-box {
+  min-width: 110px;
+
+  padding: 9px 12px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.stock-info-box span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.stock-info-box strong {
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* =========================================================
+   REQUEST COUNT
+   ========================================================= */
+
+.request-count {
+  padding: 6px 10px;
+
+  background: #f3f4f6;
+  color: #374151;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.request-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.request-table th {
+  padding: 12px 14px;
+
+  text-align: left;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #6b7280;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  white-space: nowrap;
+}
+
+.request-table td {
+  padding: 14px;
+
+  border-bottom: 1px solid #f3f4f6;
+
+  font-size: 14px;
+  color: #374151;
+}
+
+.item-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.item-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3f4f6;
+  border-radius: 7px;
+}
+
+.item-name div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.item-name strong {
+  color: #111827;
+}
+
+.item-name span:last-child {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.stock-value {
+  font-weight: 600;
+  color: #374151;
+}
+
+.remove-button {
+  border: none;
+
+  background: #fef2f2;
+  color: #dc2626;
+
+  padding: 7px 12px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background: #fee2e2;
+}
+
+/* =========================================================
+   AKSI - EDIT DAN X
+   ========================================================= */
+
+/*
+  Kolom terakhir selalu horizontal.
+  Ini mencegah Edit dan X turun ke bawah.
+*/
+
+.request-table th:last-child,
+.request-table td:last-child {
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+/*
+  Div pembungkus tombol Edit/X
+*/
+
+.request-table td:last-child > div {
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 8px;
+
+  flex-wrap: nowrap !important;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   EDIT
+   ========================================================= */
+
+.edit-button {
+  border: none;
+
+  background: #f3f4f6;
+  color: #374151;
+
+  padding: 7px 12px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.edit-button:hover {
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+.cancel-button {
+  border: none;
+
+  background: #f3f4f6;
+  color: #6b7280;
+
+  padding: 7px 12px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.cancel-button:hover {
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   DELETE X
+   ========================================================= */
+
+.delete-x-button {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+
+  background: #fef2f2;
+  color: #dc2626;
+
+  border-radius: 6px;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.delete-x-button:hover {
+  background: #fee2e2;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+.empty-state > div {
+  font-size: 36px;
+
+  margin-bottom: 10px;
+}
+
+.empty-state h3 {
+  margin: 0;
+
+  color: #374151;
+
+  font-size: 16px;
+}
+
+.empty-state p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SUBMIT REQUEST
+   ========================================================= */
+
+.request-submit-section {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 24px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+}
+
+.request-submit-section strong {
+  color: #111827;
+
+  font-size: 15px;
+}
+
+.request-submit-section p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.submit-request-button {
+  border: none;
+
+  background: #111827;
+  color: white;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.submit-request-button:hover {
+  background: #1f2937;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-state {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 60px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .request-container {
+    padding: 28px 24px;
+  }
+
+  .input-fields-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .add-item-button {
+    width: 100%;
+  }
+
+  .selected-product-main {
+    gap: 20px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .request-container {
+    padding: 20px 16px;
+  }
+
+  .request-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-fields-row {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-product {
+    align-items: flex-start;
+  }
+
+  .selected-product-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .selected-product-stock {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .product-stock-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .product-stock-info span {
+    font-size: 11px;
+    color: #6b7280;
+  }
+  .product-stock-info strong {
+    color: #374151;
+  }
+
+  .request-submit-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .submit-request-button {
+    width: 100%;
+  }
+
+  .product-dropdown {
+    max-height: 240px;
+  }
+
+  .product-option {
+    padding: 12px;
+  }
+
+  /*
+    Di mobile pun Edit dan X tetap menyamping.
+  */
+
+  .request-table td:last-child > div {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* =========================================================
+   MOBILE KECIL - MAX WIDTH 500px
+   ========================================================= */
+
+@media (max-width: 500px) {
+  .selected-product-stock {
+    width: 100%;
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 10px;
+    flex-wrap: nowrap;
+
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .selected-product-stock > * {
+    margin-left: 0;
+  }
+
+  .stock-info-box {
+    flex: 0 0 auto;
+
+    margin-left: 0;
+
+    text-align: left;
+  }
+
+  .stock-info-box:first-child {
+    margin-left: 0;
+  }
+
+  .stock-info-box:last-child {
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   SUCCESS NOTIFICATION
+   ========================================================= */
+
+.request-success-toast {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  z-index: 9999;
+
+  width: min(calc(100% - 40px), 520px);
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 17px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #cfe3d5;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 14px 35px rgba(31, 68, 47, 0.18),
+    0 4px 12px rgba(31, 68, 47, 0.08);
+
+  transform: translate(-50%, -130px);
+
+  animation: requestToastAnimation 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.request-success-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2a6040;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 12px rgba(42, 96, 64, 0.2);
+}
+
+.request-success-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.request-success-content strong {
+  color: #244332;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.request-success-content span {
+  color: #718078;
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+@keyframes requestToastAnimation {
+  0% {
+    opacity: 0;
+
+    transform: translate(-50%, -130px);
+  }
+
+  15% {
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translate(-50%, -130px);
+  }
+}
+
+@media (max-width: 600px) {
+  .request-success-toast {
+    top: 68px;
+
+    width: calc(100% - 28px);
+
+    min-height: 60px;
+
+    padding: 11px 14px;
+  }
+
+  .request-success-icon {
+    width: 31px;
+    height: 31px;
+
+    font-size: 14px;
+  }
+
+  .request-success-content strong {
+    font-size: 11px;
+  }
+
+  .request-success-content span {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   REQUEST HISTORY / REQUEST SEDANG DIPROSES
+   ========================================================= */
+
+.active-request-section {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5ebe7;
+  border-radius: 16px;
+  padding: 28px;
+  box-sizing: border-box;
+  margin-top: 28px;
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.active-request-section .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.active-request-section .section-header h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #263d30;
+}
+
+.active-request-section .section-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #8a958e;
+}
+
+/* =========================================================
+   REQUEST HISTORY LIST
+   ========================================================= */
+
+.request-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =========================================================
+   REQUEST HISTORY CARD
+   ========================================================= */
+
+.request-history-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e5ebe7;
+  border-radius: 12px;
+  padding: 20px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.request-history-card:hover {
+  border-color: #b9ccbf;
+  box-shadow: 0 6px 20px rgba(42, 96, 64, 0.06);
+}
+
+/* =========================================================
+   REQUEST CARD HEADER
+   ========================================================= */
+
+.request-history-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.request-history-number {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.request-history-number strong {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6f8176;
+}
+
+.request-history-date {
+  font-size: 11px;
+  color: #8c9790;
+}
+
+/* =========================================================
+   REQUEST STATUS
+   ========================================================= */
+
+.request-status {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  background: #eef4f0;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #47705a;
+}
+
+/* =========================================================
+   REQUEST ITEMS
+   ========================================================= */
+
+.request-history-items {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #edf1ee;
+  border-radius: 9px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/* =========================================================
+   REQUEST ITEM
+   ========================================================= */
+
+.request-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 15px;
+  background: #fafcfb;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.request-history-item:last-child {
+  border-bottom: none;
+}
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
+.request-history-item-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.request-history-item-name strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #33463b;
+}
+
+.request-history-item-name span {
+  font-size: 11px;
+  color: #8c9790;
+}
+
+/* =========================================================
+   REQUEST QUANTITY
+   ========================================================= */
+
+.request-history-item-qty {
+  margin-left: auto;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+
+  min-width: 90px;
+  padding: 10px 14px;
+
+  box-sizing: border-box;
+
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.request-history-item-qty span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* =========================================================
+   REQUEST FOOTER
+   ========================================================= */
+
+.request-history-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.request-history-footer > span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7d8982;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .active-request-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .active-request-section .section-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .active-request-section .section-header h2 {
+    font-size: 18px;
+  }
+
+  .active-request-section .section-header p {
+    font-size: 11px;
+  }
+
+  .request-history-list {
+    gap: 12px;
+  }
+
+  .request-history-card {
+    padding: 16px;
+    border-radius: 11px;
+  }
+
+  .request-history-header {
+    margin-bottom: 15px;
+  }
+
+  .request-history-number strong {
+    font-size: 10px;
+  }
+
+  .request-history-date {
+    font-size: 10px;
+  }
+
+  .request-status {
+    padding: 6px 9px;
+    font-size: 9px;
+  }
+
+  .request-history-item {
+    padding: 11px 12px;
+  }
+
+  .request-history-item-name strong {
+    font-size: 12px;
+  }
+
+  .request-history-item-name span {
+    font-size: 10px;
+  }
+
+  .request-history-item-qty {
+    min-width: 75px;
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
+  .request-history-item-qty span {
+    font-size: 10px;
+  }
+
+  .request-history-footer {
+    gap: 10px;
+  }
+
+  .request-history-footer > span {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+  .active-request-section {
+    padding: 16px;
+  }
+
+  .active-request-section .section-header {
+    flex-direction: column;
+  }
+
+  .request-history-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .request-status {
+    align-self: flex-start;
+  }
+
+  .request-history-item {
+    align-items: flex-start;
+  }
+
+  .request-history-item-qty {
+    margin-top: 0;
+  }
+
+  .request-history-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   REQUEST SEDANG DIPROSES
+========================================================= */
+
+.request-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fae1aa;
+  border-radius: 12px;
+  padding: 20px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.request-card:hover {
+  border-color: #fff6dd;
+  box-shadow: 0 6px 20px rgba(180, 140, 30, 0.08);
+}
+
+/* Status kuning */
+
+.request-status {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  background: #fff3cd;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #9a6700;
+}
+
+/* Kotak jumlah request */
+
+.request-info-box {
+  min-width: 110px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+
+  background: #fcfcfc;
+  border: 1px solid #9b770b;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Footer */
+
+.request-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.request-card-footer > span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9a6700;
+}
